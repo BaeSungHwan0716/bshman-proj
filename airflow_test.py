@@ -47,7 +47,7 @@ with DAG(
              , modified_datetime
         FROM product_order 
         where 1=1
-          and date_format(create_datetime,'%Y%m%d%H') between date_format(create_datetime - interval '1' hour,'%Y%m%d%H%i') and date_format(create_datetime - interval '1' MINUTE,'%Y%m%d%H%i')
+          and date_format(create_datetime,'%Y%m%d%H%i') between date_format(now() - interval '1' hour,'%Y%m%d%H%i') and date_format(now() - interval '1' MINUTE,'%Y%m%d%H%i')
         """,
         bucket_name='ods_bucket',
         filename='product_order_{{ ts_nodash }}.json',
@@ -75,7 +75,7 @@ with DAG(
             , modified_datetime
         FROM product_order_items 
         where 1=1
-          and date_format(create_datetime,'%Y%m%d%H') between date_format(create_datetime - interval '1' hour,'%Y%m%d%H%i') and date_format(create_datetime - interval '1' MINUTE,'%Y%m%d%H%i')
+          and date_format(create_datetime,'%Y%m%d%H%i') between date_format(now() - interval '1' hour,'%Y%m%d%H%i') and date_format(now() - interval '1' MINUTE,'%Y%m%d%H%i')
         """,
         bucket_name='ods_bucket',
         filename='product_order_items_{{ ts_nodash }}.json',
@@ -97,7 +97,7 @@ with DAG(
             , modified_datetime
         FROM product_order_items_sku 
         where 1=1
-          and date_format(create_datetime,'%Y%m%d%H') between date_format(create_datetime - interval '1' hour,'%Y%m%d%H%i') and date_format(create_datetime - interval '1' MINUTE,'%Y%m%d%H%i')
+          and date_format(create_datetime,'%Y%m%d%H%i') between date_format(now() - interval '1' hour,'%Y%m%d%H%i') and date_format(now() - interval '1' MINUTE,'%Y%m%d%H%i')
         """,
         bucket_name='ods_bucket',
         filename='product_order_items_sku_{{ ts_nodash }}.json',
@@ -122,7 +122,7 @@ with DAG(
            , modified_datetime
         FROM product 
         where 1=1
-          and date_format(create_datetime,'%Y%m%d%H') between date_format(create_datetime - interval '1' hour,'%Y%m%d%H%i') and date_format(create_datetime - interval '1' MINUTE,'%Y%m%d%H%i')
+          and date_format(create_datetime,'%Y%m%d%H%i') between date_format(now() - interval '1' hour,'%Y%m%d%H%i') and date_format(now() - interval '1' MINUTE,'%Y%m%d%H%i')
         """,
         bucket_name='ods_bucket',
         filename='product_{{ ts_nodash }}.json',
@@ -142,7 +142,7 @@ with DAG(
            , modified_datetime
         FROM sku 
         where 1=1
-          and date_format(create_datetime,'%Y%m%d%H') between date_format(create_datetime - interval '1' hour,'%Y%m%d%H%i') and date_format(create_datetime - interval '1' MINUTE,'%Y%m%d%H%i')
+          and date_format(create_datetime,'%Y%m%d%H%i') between date_format(now() - interval '1' hour,'%Y%m%d%H%i') and date_format(now() - interval '1' MINUTE,'%Y%m%d%H%i')
         """,
         bucket_name='ods_bucket',
         filename='sku_{{ ts_nodash }}.json',
@@ -162,7 +162,7 @@ with DAG(
            , modified_datetime
         FROM user 
         where 1=1
-          and date_format(create_datetime,'%Y%m%d%H') between date_format(create_datetime - interval '1' hour,'%Y%m%d%H%i') and date_format(create_datetime - interval '1' MINUTE,'%Y%m%d%H%i')
+          and date_format(create_datetime,'%Y%m%d%H%i') between date_format(now() - interval '1' hour,'%Y%m%d%H%i') and date_format(now() - interval '1' MINUTE,'%Y%m%d%H%i')
         """,
         bucket_name='ods_bucket',
         filename='user_{{ ts_nodash }}.json',
